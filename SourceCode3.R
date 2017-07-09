@@ -152,50 +152,42 @@ ui <- miniPage(
       
       #output Adjustment
       adj<-adj1*adj2*adj3*adj4*adj5
-      print(adj)
+      #print(adj)
       
       
       #Buildings
       Premium_Building<-input$Prop_Rating_Buildings_Count*
         input$Prop_Rating_SI_Buildings[2]*
         rates[rates$Field.Name=="Prop_Rating_SI_Buildings",3]*1000
-      print(Premium_Building)
+      #print(Premium_Building)
       
       #FF
       Premium_FF<-input$Prop_Rating_Buildings_Count*
         input$Prop_Rating_SI_FF[2]*
         rates[rates$Field.Name=="Prop_Rating_SI_FF",3]*1000
-      print(Premium_FF)
+      #print(Premium_FF)
       
       #Possessions
       Premium_Possessions<-input$Prop_Rating_Buildings_Count*
         input$Prop_Rating_SI_Possessions[2]*
         rates[rates$Field.Name=="Prop_Rating_SI_Possessions",3]*1000
-      print(Premium_Possessions)
+      #print(Premium_Possessions)
       
       #All Risks
       Premium_All_Risks<-input$Prop_Rating_Buildings_Count*
         input$Prop_Rating_SI_All_Risks[2]*
         rates[rates$Field.Name=="Prop_Rating_SI_All_Risks",3]*1000
-      print(Premium_All_Risks)
+      #print(Premium_All_Risks)
       
       #BI
       Premium_BI<-input$Prop_Rating_Buildings_Count*
         input$Prop_Rating_SI_BI[2]*
         rates[rates$Field.Name=="Prop_Rating_BI",3]*1000
-      print(Premium_BI)
+      #print(Premium_BI)
       
       #Total
       Premium_Total<-Premium_Building+Premium_Possessions+Premium_FF+Premium_All_Risks+Premium_BI
-      print(Premium_Total)
       
-      #Premium_Total
-      
-      print(input$Prop_Rating_SI_Buildings[2])
-      print(input$Prop_Rating_SI_FF[2])
-      print(input$Prop_Rating_SI_Possessions[2])
-      print(input$Prop_Rating_SI_All_Risks[2])
-      print(input$Prop_Rating_SI_BI[2],NULL)
       
       #QuoteSummary
       QuoteSummary<-data.frame("Type"=rep("A",6),"Quote"=rep(0,6),"SI"=rep(0,6),"Ded"=rep(0,6))
@@ -205,7 +197,7 @@ ui <- miniPage(
       QuoteSummary$SI<-c(input$Prop_Rating_SI_Buildings[2],input$Prop_Rating_SI_FF[2],input$Prop_Rating_SI_Possessions[2],
         input$Prop_Rating_SI_All_Risks[2],input$Prop_Rating_SI_BI[2],"")
       QuoteSummary$Ded<-c(input$Prop_Rating_SI_Buildings[1]*1000,input$Prop_Rating_SI_FF[1]*1000,input$Prop_Rating_SI_Possessions[1]*1000,
-        input$Prop_Rating_SI_All_Risks[1]*1000,input$Prop_Rating_SI_BI[1]*1000,"Blank")
+        input$Prop_Rating_SI_All_Risks[1]*1000,input$Prop_Rating_SI_BI[1]*1000,"")
       #print(Quote)
       #QuoteSummary<-data.frame(Quote=rep(0,6),SI=rep(0,6),Ded=rep(0,6))
       #Quote
