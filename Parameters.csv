@@ -1,0 +1,14 @@
+Field Name,Values
+Acc_Risk_Type,Fostering
+Acc_Risk_Type,Care Home
+Acc_Risk_Type,Secure Facility
+Prop_Rating_Construction_Adj,Combustible
+Prop_Rating_Construction_Adj,Composite
+Prop_Rating_Construction_Adj,Other
+Prop_Rating_Year_Adj,Yes
+Prop_Rating_Year_Adj,No
+Prop_Rating_FireProtect_Adj,Yes
+Prop_Rating_FireProtect_Adj,No
+Prop_Rating_RM_Adj,Good
+Prop_Rating_RM_Adj,OK
+Prop_Rating_RM_Adj,Bad

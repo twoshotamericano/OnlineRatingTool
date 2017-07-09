@@ -1,0 +1,18 @@
+Field Name,Values,Rate
+Acc_Risk_Type,Fostering,1.1
+Acc_Risk_Type,Care Home,1
+Acc_Risk_Type,Secure Facility,1.2
+Prop_Rating_SI_Buildings,Any,0.001
+Prop_Rating_SI_FF,Any,0.0005
+Prop_Rating_SI_Possessions,Any,0.00075
+Prop_Rating_SI_All_Risks,Any,0.002
+Prop_Rating_Construction_Adj,Combustible,1.3
+Prop_Rating_Construction_Adj,Composite,1.2
+Prop_Rating_Construction_Adj,Other,1.1
+Prop_Rating_Year_Adj,Yes,1.1
+Prop_Rating_Year_Adj,No,1
+Prop_Rating_FireProtect_Adj,Yes,1.15
+Prop_Rating_FireProtect_Adj,No,1
+Prop_Rating_RM_Adj,Good,0.7
+Prop_Rating_RM_Adj,OK,1
+Prop_Rating_RM_Adj,Bad,1.1

@@ -2,7 +2,9 @@ library(shiny)
 library(miniUI)
 library(leaflet)
 library(ggplot2)
+library(readr)
 
+data<-read_csv("https://raw.githubusercontent.com/twoshotamericano/OnlineRatingTool/master/Data.csv")
 #Here is some text
 
 ui <- miniPage(
@@ -10,15 +12,25 @@ ui <- miniPage(
   miniTabstripPanel(
     
     miniTabPanel("Search", icon = icon("search"),
-                 miniContentPanel(
-                   DT::dataTableOutput("table")
+                 miniContentPanel(padding=0,
+                   DT::dataTableOutput("table",height="100%")
                  )),
     
     miniTabPanel("Risk Info", icon = icon("info-circle"),
-                 miniContentPanel(
-                   sliderInput("year", "Year", 1978, 2010, c(2000, 2010), sep = "")
-                 )
-    ),
+                    fillRow(
+                     fillCol(
+                       textInput("Acc_insured", "Name of Insured", value = "Type here..",width="100%"),
+                       dateInput("Acc_incept_date", "Inception Date", value = NULL, min = NULL, max = NULL, format = "yyyy-mm-dd", startview = "month", weekstart = 0, language = "en"),
+                       dateInput("Acc_quote_date", "Quote Date", value = NULL, min = NULL, max = NULL, format = "yyyy-mm-dd", startview = "month", weekstart = 0, language = "en")
+                     ),
+                     fillCol(
+                       selectInput("Acc_Risk_Type", "Risk Type", list("Fostering","Care Home","Secure Facility"), selected = NULL, multiple = FALSE, selectize = TRUE,width="50%"),
+                       dateInput("Acc_expiry_date", "Expiry Date", value = NULL, min = NULL, max = NULL, format = "yyyy-mm-dd", startview = "month", weekstart = 0, language = "en"),
+                       selectInput("Acc_underwriter", "Underwriter", list("Rich","Mark"), selected = NULL, multiple = FALSE, selectize = TRUE,height="100%")
+                   )
+                   )
+                  
+                  ,
     miniTabPanel("Property Rating", icon = icon("balance-scale"),
                  miniContentPanel(
                    sliderInput("year", "Year", 1978, 2010, c(2000, 2010), sep = "")
@@ -52,7 +64,7 @@ server <- function(input, output, session) {
   })
   
   output$table <- DT::renderDataTable({
-    diamonds
+    data[,c(1:5,12)]
   })
   
   observeEvent(input$done, {
