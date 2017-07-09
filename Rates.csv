@@ -6,6 +6,7 @@ Prop_Rating_SI_Buildings,Any,0.001
 Prop_Rating_SI_FF,Any,0.0005
 Prop_Rating_SI_Possessions,Any,0.00075
 Prop_Rating_SI_All_Risks,Any,0.002
+Prop_Rating_BI,Any,0.005
 Prop_Rating_Construction_Adj,Combustible,1.3
 Prop_Rating_Construction_Adj,Composite,1.2
 Prop_Rating_Construction_Adj,Other,1.1
